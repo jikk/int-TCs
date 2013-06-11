@@ -29,12 +29,10 @@ entry:
   %1 = call { i32, i1 } @llvm.sadd.with.overflow.i32(i32 %0, i32 1)
   %2 = extractvalue { i32, i1 } %1, 0
   %3 = extractvalue { i32, i1 } %1, 1
-  %4 = xor i1 %3, true
-  br i1 %4, label %cont, label %handler.add_overflow, !prof !0
+  store i1 %3, i1* %test_var
+  %4 = xor i1 %3, true  br i1 %4, label %cont, label %handler.add_overflow, !prof !0
 
 handler.add_overflow:                             ; preds = %entry
-  ;jikk - step 2. setting %test_var
-  store i1 %4, i1* %test_var
   ;call void @__ubsan_handle_add_overflow(i8* bitcast ({ { i8*, i32, i32 }, { i16, i16, [6 x i8] }* }* @2 to i8*), i32 %0, i32 1) #4
   br label %cont
 
@@ -43,7 +41,7 @@ cont:                                             ; preds = %handler.add_overflo
   %5 = load i32* %j, align 4
 
   ;jikk - adding another branch instruction
-  %t0 = load i1* %test_var, align 4
+  %test_var1 = load i1* %test_var, align 4
   br i1 %t0, label %cont0, label %check_malloc, !prof !0
 
   ;adding another block for control decison
