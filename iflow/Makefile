@@ -1,17 +1,13 @@
-CC=/Users/jikk/llvm-build/Debug+Asserts/bin/clang
-CC1=/usr/bin/clang
+CC_IOC=/Users/jikk/ioc-build/Debug+Asserts/bin/clang
+CC=/usr/bin/clang
 
-over0_ll:
-	$(CC1) -m32 -S -emit-llvm over0.c  -o over0.ll
-	$(CC) -m32 -S -emit-llvm over0.c  -fsanitize=integer -o over0_san.ll
+IOC_FLAG=-fioc-explicit-conversion -fioc-implicit-conversion -fioc-unsigned -fioc-signed -fioc-shifts -fioc-strict-shifts
 
-over0_bc:
-	$(CC1) -m32 -c -emit-llvm over0.c  -o over0.bc
-	$(CC) -m32 -c  -emit-llvm over0.c  -fsanitize=integer -o over0_san.bc
+all: test0 test1
 
-over0: over0_ll
-	$(CC1) over0.ll  -o over0
-	$(CC) over0_san.ll  -o over0_san
+%: %.c
+	$(CC) -m32 -S -emit-llvm $(@).c -o $(@).ll
+	$(CC_IOC) -m32 -S -emit-llvm $(IOC_FLAG)  $(@).c  -o $(@)_ioc.ll
 
 clean:
-	rm -f *.ll *.bc over0 over0_san
+	rm -f *.ll
