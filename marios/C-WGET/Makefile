@@ -3,7 +3,7 @@ CC_IOC=/home/mariuska/ioc-build/Release+Asserts/bin/clang
 
 IOC_FLAG=-fioc-explicit-conversion -fioc-implicit-conversion -fioc-unsigned -fioc-signed -fioc-shifts -fioc-strict-shifts
 
-all: gettimeofday
+all: signed_to_size_t int_to_unsigned_char size_overflow wgint_shift size_underflow 
 
 %: %.c
 #	$(CC) -m32 -S -emit-llvm $(@).c -o $(@).ll
