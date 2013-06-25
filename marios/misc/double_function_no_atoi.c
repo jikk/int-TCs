@@ -21,10 +21,8 @@ void foo(unsigned char a)
 
 int main()
 {
-/*	char s[4];
+	char s[4];
 	fgets(s, 4, stdin);
 	unsigned char a = (unsigned char) s[0];
-*/
-	unsigned char a = 1000;
 	foo(a);
 }
