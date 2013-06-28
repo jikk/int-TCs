@@ -1,6 +1,6 @@
 #!/bin/bash
 #should be run outside testData dir
-export SS_TC_ROOT="/home/tm/phase2/C-NGIN"
+export SS_TC_ROOT="/home/tm/sample/C-NGIN"
 export NGIN="/opt/stonesoup/TH-workspace/install/sbin/nginx"
 export START_SERVER="$NGIN -c $SS_TC_ROOT/testData/nginx.conf"
 export KILL_SERVER="$SS_TC_ROOT/scripts/kill_servers.sh"
@@ -38,6 +38,4 @@ do
 done
 
 eval "$KILL_SERVER"
-echo "Cleaning up"
-perl cher_filter.pl
-echo "Done! FP are in filtered.log"
+
