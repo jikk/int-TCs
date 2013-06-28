@@ -1,0 +1,586 @@
+cd .. && \
+	  /bin/sh ./config.status Config/defs.mk
+config.status: creating Config/defs.mk
+cd .. && \
+	  /bin/sh ./config.status `echo Src/Makefile | sed 's%^./%%'`
+config.status: creating Src/Makefile
+cd .. && /bin/sh $top_srcdir/Src/mkmakemod.sh Src Makemod
+creating Src/Makemod.in
+config.status: creating Src/Makemod
+make[1]: Entering directory `/home/tm/C-ZSH2/install/Src'
+mawk -f ../../src/Src/signames1.awk /usr/include/bits/signum.h >sigtmp.c
+gcc -E sigtmp.c >sigtmp.out
+mawk -f ../../src/Src/signames2.awk sigtmp.out > signames.c
+rm -f sigtmp.c sigtmp.out
+grep 'define.*SIGCOUNT' signames.c > sigcount.h
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src'
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+`zsh.mdh' is up to date.
+echo 'timestamp for zsh.mdh against zsh.mdd' > zsh.mdhs
+if [ ! -f signames.syms ]; then \
+	    mawk -f ../../src/Src/makepro.awk signames.c Src > signames.syms; \
+	fi
+if [ ! -f signames.epro ]; then \
+	    (echo '/* Generated automatically */'; sed -n '/^E/{s/^E//;p;}' < signames.syms) \
+	        > signames.epro; \
+	    (echo '/* Generated automatically */'; sed -n '/^L/{s/^L//;p;}' < signames.syms) \
+	        > `echo signames.epro | sed 's/\.epro$/.pro/'`; \
+	fi
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src'
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+Updated `zsh.mdh'.
+make -f Makemod prefix='/home/tm/phase2/C-ZSHX/built' exec_prefix='/home/tm/phase2/C-ZSHX/built' bindir='/home/tm/phase2/C-ZSHX/built/bin' libdir='/home/tm/phase2/C-ZSHX/built/lib' MODDIR='/home/tm/phase2/C-ZSHX/built/lib/zsh/5.0.0' infodir='/home/tm/phase2/C-ZSHX/built/share/info' mandir='/home/tm/phase2/C-ZSHX/built/share/man' datadir='/home/tm/phase2/C-ZSHX/built/share' fndir='/home/tm/phase2/C-ZSHX/built/share/zsh/5.0.0/functions' htmldir='/home/tm/phase2/C-ZSHX/built/share/zsh/htmldoc' CC='gcc' CPPFLAGS='' DEFS='-DHAVE_CONFIG_H' CFLAGS='-Wall -Wmissing-prototypes -O2' LDFLAGS='' EXTRA_LDFLAGS='-rdynamic' DLCFLAGS='-fPIC' DLLDFLAGS='-shared' LIBLDFLAGS='-s' EXELDFLAGS='-s' LIBS='-ldl -lncursesw -lrt -lm  -lc' DL_EXT='so' DLLD='gcc' AWK='mawk' ANSI2KNR=': ansi2knr' YODL=': yodl ' YODL2TXT=': yodl2txt' YODL2HTML=': yodl2html' FUNCTIONS_INSTALL='' tzsh='zsh' prep
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src'
+creating Src/Builtins/Makefile.in
+config.status: creating Src/Builtins/Makefile
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+creating Src/Modules/Makefile.in
+config.status: creating Src/Modules/Makefile
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+creating Src/Zle/Makefile.in
+config.status: creating Src/Zle/Makefile
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+echo 'timestamp for *.mdd files' > ../Src/modules.stamp
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+`rlimits.mdh' is up to date.
+echo 'timestamp for rlimits.mdh against rlimits.mdd' > rlimits.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+Updated `rlimits.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+`sched.mdh' is up to date.
+echo 'timestamp for sched.mdh against sched.mdd' > sched.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+Updated `sched.mdh'.
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`attr.mdh' is up to date.
+echo 'timestamp for attr.mdh against attr.mdd' > attr.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `attr.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`cap.mdh' is up to date.
+echo 'timestamp for cap.mdh against cap.mdd' > cap.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `cap.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`clone.mdh' is up to date.
+echo 'timestamp for clone.mdh against clone.mdd' > clone.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `clone.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`curses.mdh' is up to date.
+echo 'timestamp for curses.mdh against curses.mdd' > curses.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `curses.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`datetime.mdh' is up to date.
+echo 'timestamp for datetime.mdh against datetime.mdd' > datetime.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `datetime.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`example.mdh' is up to date.
+echo 'timestamp for example.mdh against example.mdd' > example.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `example.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`files.mdh' is up to date.
+echo 'timestamp for files.mdh against files.mdd' > files.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `files.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`langinfo.mdh' is up to date.
+echo 'timestamp for langinfo.mdh against langinfo.mdd' > langinfo.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `langinfo.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`mapfile.mdh' is up to date.
+echo 'timestamp for mapfile.mdh against mapfile.mdd' > mapfile.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `mapfile.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`mathfunc.mdh' is up to date.
+echo 'timestamp for mathfunc.mdh against mathfunc.mdd' > mathfunc.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `mathfunc.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`newuser.mdh' is up to date.
+echo 'timestamp for newuser.mdh against newuser.mdd' > newuser.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `newuser.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`parameter.mdh' is up to date.
+echo 'timestamp for parameter.mdh against parameter.mdd' > parameter.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `parameter.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`regex.mdh' is up to date.
+echo 'timestamp for regex.mdh against regex.mdd' > regex.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `regex.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`socket.mdh' is up to date.
+echo 'timestamp for socket.mdh against socket.mdd' > socket.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `socket.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`stat.mdh' is up to date.
+echo 'timestamp for stat.mdh against stat.mdd' > stat.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `stat.mdh'.
+if [ x" /usr/include/asm-generic/errno.h /usr/include/bits/errno.h /usr/include/asm-generic/errno-base.h" = x ]; then \
+		touch errtmp.out; \
+	   else \
+		mawk -f ../../../src/Src/Modules/errnames1.awk  /usr/include/asm-generic/errno.h /usr/include/bits/errno.h /usr/include/asm-generic/errno-base.h >errtmp.c; \
+		gcc -E errtmp.c >errtmp.out; \
+	   fi
+mawk -f ../../../src/Src/Modules/errnames2.awk errtmp.out > errnames.c
+rm -f errtmp.c errtmp.out
+grep 'define.*ERRCOUNT' errnames.c > errcount.h
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`system.mdh' is up to date.
+echo 'timestamp for system.mdh against system.mdd' > system.mdhs
+if [ ! -f errnames.syms ]; then \
+	    mawk -f ../../../src/Src/makepro.awk errnames.c Src/Modules > errnames.syms; \
+	fi
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `system.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`tcp.mdh' is up to date.
+echo 'timestamp for tcp.mdh against tcp.mdd' > tcp.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `tcp.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`termcap.mdh' is up to date.
+echo 'timestamp for termcap.mdh against termcap.mdd' > termcap.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `termcap.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`terminfo.mdh' is up to date.
+echo 'timestamp for terminfo.mdh against terminfo.mdd' > terminfo.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `terminfo.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`zftp.mdh' is up to date.
+echo 'timestamp for zftp.mdh against zftp.mdd' > zftp.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `zftp.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`zprof.mdh' is up to date.
+echo 'timestamp for zprof.mdh against zprof.mdd' > zprof.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `zprof.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`zpty.mdh' is up to date.
+echo 'timestamp for zpty.mdh against zpty.mdd' > zpty.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `zpty.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`zselect.mdh' is up to date.
+echo 'timestamp for zselect.mdh against zselect.mdd' > zselect.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `zselect.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+( \
+	    echo '/** thingies.list                            **/'; \
+	    echo '/** thingy structures for the known thingies **/'; \
+	    echo; \
+	    echo '/* format: T("name", TH_FLAGS, w_widget, t_nextthingy) */'; \
+	    echo; \
+	    sed -e 's/#.*//; /^$/d; s/" *,.*/"/' \
+		-e 's/^"/T("/; s/$/, 0,/; h' \
+		-e 's/-//g; s/^.*"\(.*\)".*/w_\1, t_D\1)/' \
+		-e 'H; g; s/\n/ /' \
+		< ../../../src/Src/Zle/iwidgets.list; \
+	    sed -e 's/#.*//; /^$/d; s/" *,.*/"/' \
+		-e 's/^"/T("./; s/$/, TH_IMMORTAL,/; h' \
+		-e 's/-//g; s/^.*"\.\(.*\)".*/w_\1, t_\1)/' \
+		-e 'H; g; s/\n/ /' \
+		< ../../../src/Src/Zle/iwidgets.list; \
+	) > thingies.list
+( \
+	    echo '/** zle_things.h                              **/'; \
+	    echo '/** indices of and pointers to known thingies **/'; \
+	    echo; \
+	    echo 'enum {'; \
+	    sed -n -f ../../../src/Src/Zle/zle_things.sed < thingies.list; \
+	    echo '    ZLE_BUILTIN_THINGY_COUNT'; \
+	    echo '};'; \
+	) > zle_things.h
+make[4]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[4]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`zle.mdh' is up to date.
+echo 'timestamp for zle.mdh against zle.mdd' > zle.mdhs
+make[4]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[4]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `zle.mdh'.
+make[4]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[4]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`complete.mdh' is up to date.
+echo 'timestamp for complete.mdh against complete.mdd' > complete.mdhs
+make[4]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[4]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `complete.mdh'.
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+`zutil.mdh' is up to date.
+echo 'timestamp for zutil.mdh against zutil.mdd' > zutil.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+Updated `zutil.mdh'.
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`compctl.mdh' is up to date.
+echo 'timestamp for compctl.mdh against compctl.mdd' > compctl.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `compctl.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`complist.mdh' is up to date.
+echo 'timestamp for complist.mdh against complist.mdd' > complist.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `complist.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`computil.mdh' is up to date.
+echo 'timestamp for computil.mdh against computil.mdd' > computil.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `computil.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`deltochar.mdh' is up to date.
+echo 'timestamp for deltochar.mdh against deltochar.mdd' > deltochar.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `deltochar.mdh'.
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+`zleparameter.mdh' is up to date.
+echo 'timestamp for zleparameter.mdh against zleparameter.mdd' > zleparameter.mdhs
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+Updated `zleparameter.mdh'.
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[1]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+rm -f stamp-modobjs.tmp
+make[1]: Entering directory `/home/tm/C-ZSH2/install/Src'
+if [ ! -f signames.syms ]; then \
+	    mawk -f ../../src/Src/makepro.awk signames.c Src > signames.syms; \
+	fi
+if [ ! -f signames.epro ]; then \
+	    (echo '/* Generated automatically */'; sed -n '/^E/{s/^E//;p;}' < signames.syms) \
+	        > signames.epro; \
+	    (echo '/* Generated automatically */'; sed -n '/^L/{s/^L//;p;}' < signames.syms) \
+	        > `echo signames.epro | sed 's/\.epro$/.pro/'`; \
+	fi
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o builtin.o ../../src/Src/builtin.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o compat.o ../../src/Src/compat.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o cond.o ../../src/Src/cond.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o exec.o ../../src/Src/exec.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o glob.o ../../src/Src/glob.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o hashtable.o ../../src/Src/hashtable.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o hashnameddir.o ../../src/Src/hashnameddir.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o hist.o ../../src/Src/hist.c
+srcdir='../../src/Src' CFMOD='../config.modules' \
+	  /bin/sh ../../src/Src/mkbltnmlst.sh bltinmods.list
+`zshpaths.h' is up to date.
+echo '#define ZSH_VERSION "'5.0.0'"' > version.h
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o init.o ../../src/Src/init.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o input.o ../../src/Src/input.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o jobs.o ../../src/Src/jobs.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o lex.o ../../src/Src/lex.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o linklist.o ../../src/Src/linklist.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o loop.o ../../src/Src/loop.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o math.o ../../src/Src/math.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o mem.o ../../src/Src/mem.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o module.o ../../src/Src/module.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o options.o ../../src/Src/options.c
+sed -ne \
+	's/^\* *\$''Revision: \(.*\) ''\$/#define ZSH_PATCHLEVEL "\1"/p' \
+	../../src/ChangeLog >patchlevel.h
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o params.o ../../src/Src/params.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o parse.o ../../src/Src/parse.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o pattern.o ../../src/Src/pattern.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o prompt.o ../../src/Src/prompt.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o signals.o ../../src/Src/signals.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o signames.o signames.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o sort.o ../../src/Src/sort.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o string.o ../../src/Src/string.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o subst.o ../../src/Src/subst.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o text.o ../../src/Src/text.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o utils.o ../../src/Src/utils.c
+gcc -c -I. -I../Src -I../../src/Src -I../../src/Src/Zle -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o watch.o ../../src/Src/watch.c
+echo '' builtin.o compat.o cond.o exec.o glob.o hashtable.o hashnameddir.o hist.o init.o input.o jobs.o lex.o linklist.o loop.o math.o mem.o module.o options.o params.o parse.o pattern.o prompt.o signals.o signames.o sort.o string.o subst.o text.o utils.o watch.o >> ../Src/stamp-modobjs.tmp
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[1]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+Updated `stamp-modobjs'.
+make[1]: Entering directory `/home/tm/C-ZSH2/install/Src'
+if [ ! -f signames.syms ]; then \
+	    mawk -f ../../src/Src/makepro.awk signames.c Src > signames.syms; \
+	fi
+if [ ! -f signames.epro ]; then \
+	    (echo '/* Generated automatically */'; sed -n '/^E/{s/^E//;p;}' < signames.syms) \
+	        > signames.epro; \
+	    (echo '/* Generated automatically */'; sed -n '/^L/{s/^L//;p;}' < signames.syms) \
+	        > `echo signames.epro | sed 's/\.epro$/.pro/'`; \
+	fi
+gcc -c -I. -I../../src/Src  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2 -o main.o ../../src/Src/main.c
+make[1]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+make[1]: Entering directory `/home/tm/C-ZSH2/install/Src'
+if [ ! -f signames.syms ]; then \
+	    mawk -f ../../src/Src/makepro.awk signames.c Src > signames.syms; \
+	fi
+( echo '#!'; cat builtin.syms compat.syms cond.syms exec.syms glob.syms hashtable.syms hashnameddir.syms hist.syms init.syms input.syms jobs.syms lex.syms linklist.syms loop.syms math.syms mem.syms module.syms options.syms params.syms parse.syms pattern.syms prompt.syms signals.syms signames.syms sort.syms string.syms subst.syms text.syms utils.syms watch.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zsh.export
+make[1]: Leaving directory `/home/tm/C-ZSH2/install/Src'
+rm -f zsh
+gcc  -s -rdynamic -o zsh main.o  `cat stamp-modobjs`   -ldl -lncursesw -lrt -lm  -lc
+make[1]: Entering directory `/home/tm/C-ZSH2/install/Src'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Builtins'
+mawk -f ../../../src/Src/Builtins/rlimits.awk /usr/include/bits/resource.h /dev/null > rlimits.h
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Builtins  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o rlimits..o ../../../src/Src/Builtins/rlimits.c
+( echo '#!'; cat rlimits.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > rlimits.export
+rm -f rlimits.so
+gcc  -s -shared -o rlimits.so   rlimits..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Builtins  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o sched..o ../../../src/Src/Builtins/sched.c
+( echo '#!'; cat sched.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > sched.export
+rm -f sched.so
+gcc  -s -shared -o sched.so   sched..o    -ldl -lncursesw -lrt -lm  -lc 
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Builtins'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Modules'
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o attr..o ../../../src/Src/Modules/attr.c
+( echo '#!'; cat attr.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > attr.export
+rm -f attr.so
+gcc  -s -shared -o attr.so   attr..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o cap..o ../../../src/Src/Modules/cap.c
+( echo '#!'; cat cap.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > cap.export
+rm -f cap.so
+gcc  -s -shared -o cap.so   cap..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o clone..o ../../../src/Src/Modules/clone.c
+( echo '#!'; cat clone.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > clone.export
+rm -f clone.so
+gcc  -s -shared -o clone.so   clone..o    -ldl -lncursesw -lrt -lm  -lc 
+mawk -f ../../../src/Src/Modules/curses_keys.awk /usr/include/ncurses.h /dev/null >curses_keys.h
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o curses..o ../../../src/Src/Modules/curses.c
+( echo '#!'; cat curses.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > curses.export
+rm -f curses.so
+gcc  -s -shared -o curses.so   curses..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o datetime..o ../../../src/Src/Modules/datetime.c
+( echo '#!'; cat datetime.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > datetime.export
+rm -f datetime.so
+gcc  -s -shared -o datetime.so   datetime..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o example..o ../../../src/Src/Modules/example.c
+( echo '#!'; cat example.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > example.export
+rm -f example.so
+gcc  -s -shared -o example.so   example..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o files..o ../../../src/Src/Modules/files.c
+( echo '#!'; cat files.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > files.export
+rm -f files.so
+gcc  -s -shared -o files.so   files..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o langinfo..o ../../../src/Src/Modules/langinfo.c
+( echo '#!'; cat langinfo.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > langinfo.export
+rm -f langinfo.so
+gcc  -s -shared -o langinfo.so   langinfo..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o mapfile..o ../../../src/Src/Modules/mapfile.c
+( echo '#!'; cat mapfile.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > mapfile.export
+rm -f mapfile.so
+gcc  -s -shared -o mapfile.so   mapfile..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o mathfunc..o ../../../src/Src/Modules/mathfunc.c
+( echo '#!'; cat mathfunc.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > mathfunc.export
+rm -f mathfunc.so
+gcc  -s -shared -o mathfunc.so   mathfunc..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o newuser..o ../../../src/Src/Modules/newuser.c
+( echo '#!'; cat newuser.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > newuser.export
+rm -f newuser.so
+gcc  -s -shared -o newuser.so   newuser..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o parameter..o ../../../src/Src/Modules/parameter.c
+( echo '#!'; cat parameter.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > parameter.export
+rm -f parameter.so
+gcc  -s -shared -o parameter.so   parameter..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o regex..o ../../../src/Src/Modules/regex.c
+( echo '#!'; cat regex.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > regex.export
+rm -f regex.so
+gcc  -s -shared -o regex.so   regex..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o socket..o ../../../src/Src/Modules/socket.c
+( echo '#!'; cat socket.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > socket.export
+rm -f socket.so
+gcc  -s -shared -o socket.so   socket..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o stat..o ../../../src/Src/Modules/stat.c
+( echo '#!'; cat stat.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > stat.export
+rm -f stat.so
+gcc  -s -shared -o stat.so   stat..o    -ldl -lncursesw -lrt -lm  -lc 
+if [ ! -f errnames.syms ]; then \
+	    mawk -f ../../../src/Src/makepro.awk errnames.c Src/Modules > errnames.syms; \
+	fi
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o system..o ../../../src/Src/Modules/system.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o errnames..o errnames.c
+( echo '#!'; cat system.syms errnames.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > system.export
+rm -f system.so
+gcc  -s -shared -o system.so   system..o errnames..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o tcp..o ../../../src/Src/Modules/tcp.c
+( echo '#!'; cat tcp.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > tcp.export
+rm -f tcp.so
+gcc  -s -shared -o tcp.so   tcp..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o termcap..o ../../../src/Src/Modules/termcap.c
+( echo '#!'; cat termcap.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > termcap.export
+rm -f termcap.so
+gcc  -s -shared -o termcap.so   termcap..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o terminfo..o ../../../src/Src/Modules/terminfo.c
+( echo '#!'; cat terminfo.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > terminfo.export
+rm -f terminfo.so
+gcc  -s -shared -o terminfo.so   terminfo..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zftp..o ../../../src/Src/Modules/zftp.c
+( echo '#!'; cat zftp.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zftp.export
+rm -f zftp.so
+gcc  -s -shared -o zftp.so   zftp..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zprof..o ../../../src/Src/Modules/zprof.c
+( echo '#!'; cat zprof.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zprof.export
+rm -f zprof.so
+gcc  -s -shared -o zprof.so   zprof..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zpty..o ../../../src/Src/Modules/zpty.c
+( echo '#!'; cat zpty.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zpty.export
+rm -f zpty.so
+gcc  -s -shared -o zpty.so   zpty..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zselect..o ../../../src/Src/Modules/zselect.c
+( echo '#!'; cat zselect.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zselect.export
+rm -f zselect.so
+gcc  -s -shared -o zselect.so   zselect..o    -ldl -lncursesw -lrt -lm  -lc 
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Modules  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zutil..o ../../../src/Src/Modules/zutil.c
+( echo '#!'; cat zutil.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zutil.export
+make[3]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+( echo '#!'; cat complete.syms compcore.syms compmatch.syms compresult.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > complete.export
+make[3]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+rm -f zutil.so
+gcc  -s -shared -o zutil.so   zutil..o    -ldl -lncursesw -lrt -lm  -lc 
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Modules'
+make[2]: Entering directory `/home/tm/C-ZSH2/install/Src/Zle'
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o compctl..o ../../../src/Src/Zle/compctl.c
+( echo '#!'; cat compctl.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > compctl.export
+( echo '#!'; cat zle_bindings.syms zle_hist.syms zle_keymap.syms zle_main.syms zle_misc.syms zle_move.syms zle_params.syms zle_refresh.syms zle_thingy.syms zle_tricky.syms zle_utils.syms zle_vi.syms zle_word.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zle.export
+rm -f compctl.so
+gcc  -s -shared -o compctl.so   compctl..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o complete..o ../../../src/Src/Zle/complete.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o compcore..o ../../../src/Src/Zle/compcore.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o compmatch..o ../../../src/Src/Zle/compmatch.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o compresult..o ../../../src/Src/Zle/compresult.c
+rm -f complete.so
+gcc  -s -shared -o complete.so   complete..o compcore..o compmatch..o compresult..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o complist..o ../../../src/Src/Zle/complist.c
+( echo '#!'; cat complist.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > complist.export
+rm -f complist.so
+gcc  -s -shared -o complist.so   complist..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o computil..o ../../../src/Src/Zle/computil.c
+( echo '#!'; cat computil.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > computil.export
+rm -f computil.so
+gcc  -s -shared -o computil.so   computil..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o deltochar..o ../../../src/Src/Zle/deltochar.c
+( echo '#!'; cat deltochar.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > deltochar.export
+rm -f deltochar.so
+gcc  -s -shared -o deltochar.so   deltochar..o    -ldl -lncursesw -lrt -lm  -lc 
+( \
+	    echo '/** widgets.list                               **/'; \
+	    echo '/** widget structures for the internal widgets **/'; \
+	    echo; \
+	    echo '/* format: W(ZLE_FLAGS, t_firstname, functionname) */'; \
+	    echo; \
+	    sed -e 's/#.*//; /^$/d; s/-//g' \
+		-e 's/^"\(.*\)" *, *\([^ ]*\) *, *\(.*\)/W(\3, t_\1, \2)/' \
+		< ../../../src/Src/Zle/iwidgets.list; \
+	) > widgets.list
+( \
+	    echo '/** zle_widget.h                                **/'; \
+	    echo '/** indices of and pointers to internal widgets **/'; \
+	    echo; \
+	    echo 'enum {'; \
+	    sed -n -f ../../../src/Src/Zle/zle_widget.sed < widgets.list; \
+	    echo '    ZLE_BUILTIN_WIDGET_COUNT'; \
+	    echo '};'; \
+	) > zle_widget.h
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_bindings..o ../../../src/Src/Zle/zle_bindings.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_hist..o ../../../src/Src/Zle/zle_hist.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_keymap..o ../../../src/Src/Zle/zle_keymap.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_main..o ../../../src/Src/Zle/zle_main.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_misc..o ../../../src/Src/Zle/zle_misc.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_move..o ../../../src/Src/Zle/zle_move.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_params..o ../../../src/Src/Zle/zle_params.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_refresh..o ../../../src/Src/Zle/zle_refresh.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_thingy..o ../../../src/Src/Zle/zle_thingy.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_tricky..o ../../../src/Src/Zle/zle_tricky.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_utils..o ../../../src/Src/Zle/zle_utils.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_vi..o ../../../src/Src/Zle/zle_vi.c
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zle_word..o ../../../src/Src/Zle/zle_word.c
+rm -f zle.so
+gcc  -s -shared -o zle.so   zle_bindings..o zle_hist..o zle_keymap..o zle_main..o zle_misc..o zle_move..o zle_params..o zle_refresh..o zle_thingy..o zle_tricky..o zle_utils..o zle_vi..o zle_word..o    -ldl -lncursesw -lrt -lm  -lc 
+gcc -c -I. -I../../Src -I../../../src/Src -I../../../src/Src/Zle -I../../../src/Src/Zle  -DHAVE_CONFIG_H -DMODULE -Wall -Wmissing-prototypes -O2 -fPIC -o zleparameter..o ../../../src/Src/Zle/zleparameter.c
+( echo '#!'; cat zleparameter.syms  | sed -n '/^X/{s/^X//;p;}' | sort -u ) > zleparameter.export
+rm -f zleparameter.so
+gcc  -s -shared -o zleparameter.so   zleparameter..o    -ldl -lncursesw -lrt -lm  -lc 
+make[2]: Leaving directory `/home/tm/C-ZSH2/install/Src/Zle'
+make[1]: Leaving directory `/home/tm/C-ZSH2/install/Src'
