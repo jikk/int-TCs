@@ -1,8 +1,8 @@
 #!/bin/bash
 #should be run inside testData directory
 
-export GREP_SRC="/home/tm/phase2/C-GREP/src/src/grep"
-export OUTPUT_DIR="/home/tm/phase2/C-GREP/testOutput"
+export GREP_SRC="/opt/stonesoup/TH-workspace/install/bin/grep"
+export OUTPUT_DIR="../testOutput"
 
 test_cases=( "^[ex] input/dict.txt" 					\
 	"-r -i BIRMINGHAM input/zip/" 					\
@@ -36,7 +36,7 @@ for i in {0..9}
 do
    	echo "Running test $((i+1))"
    	echo "Running test $((i+1))" >> tests_output.log
-	eval "time $GREP_SRC ${test_cases[$i]} > tc_stdout 2>>debug.log"
+	eval "$GREP_SRC ${test_cases[$i]} > tc_stdout 2>>debug.log"
 	#Handle post processing of some testcases
 	if [ $i -eq 1 ]
 	then
@@ -57,6 +57,3 @@ do
 	fi
 	echo ""
 done
-echo "Cleaning up"
-perl filter.pl
-echo "Done! FP are in filtered.log"

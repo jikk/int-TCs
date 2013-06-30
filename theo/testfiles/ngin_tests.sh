@@ -1,11 +1,10 @@
 #!/bin/bash
 #should be run outside testData dir
-export SS_TC_ROOT="/home/tm/sample/C-NGIN"
+export SS_TC_ROOT="/home/tm/C-NGIN"
 export NGIN="/opt/stonesoup/TH-workspace/install/sbin/nginx"
 export START_SERVER="$NGIN -c $SS_TC_ROOT/testData/nginx.conf"
 export KILL_SERVER="$SS_TC_ROOT/scripts/kill_servers.sh"
 export OUTPUT_DIR="$SS_TC_ROOT/testOutput"
-export COMPILER_LOG="/home/tm/phase2/compiler-rt.log"
 export PRE_PROCESS="sed -e '/STONESOUP_ENV_VARIABLES/{r nginx_conf_env.txt' -e 'd}' -i $SS_TC_ROOT/testData/nginx.conf;sed -e \"s|PREFIX_DIRECTORY|\"$SS_TC_ROOT/\"|\" -i $SS_TC_ROOT/testData/nginx.conf;" 	
 export SERVICE_MON="$SS_TC_ROOT/scripts/service_mon.sh localhost 8888;"
 
