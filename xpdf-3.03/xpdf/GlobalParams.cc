@@ -47,6 +47,8 @@
 #  define strcasecmp stricmp
 #endif
 
+#include <stdint.h>
+
 #if MULTITHREADED
 #  define lockGlobalParams            gLockMutex(&mutex)
 #  define lockUnicodeMapCache         gLockMutex(&unicodeMapCacheMutex)
@@ -72,6 +74,10 @@
 extern XpdfPluginVecTable xpdfPluginVecTable;
 #  endif
 #endif
+
+//Global variable to prevent char variable length
+//from being optimized away.
+int8_t guard = 0;
 
 //------------------------------------------------------------------------
 
@@ -626,6 +632,7 @@ GlobalParams::GlobalParams(char *cfgFileName) {
   GString *fileName;
   FILE *f;
   int i;
+  int8_t cnt = 0;
 
 #if MULTITHREADED
   gInitMutex(&mutex);
@@ -776,6 +783,7 @@ GlobalParams::GlobalParams(char *cfgFileName) {
   residentUnicodeMaps->add(map->getEncodingName(), map);
 
   // look for a user config file, then a system-wide config file
+
   f = NULL;
   fileName = NULL;
   if (cfgFileName && cfgFileName[0]) {
@@ -784,6 +792,30 @@ GlobalParams::GlobalParams(char *cfgFileName) {
       delete fileName;
     }
   }
+
+  //planted overflow begin
+  char line[256];
+  if (f) {
+    while(fgets(line, 256, f) != NULL) {
+      cnt++;
+
+      //guard statement to prevent optimization.
+      cnt -= guard;
+
+      //overflow
+      if (cnt < 0) {
+        //TODO: fun thing should happen here!
+        //now, it simply crashes
+        printf("==== Overflow!!!! ====\n");
+        printf("==== Crashing!!!! ====\n");
+        printf("whoops %s\n", (char*) (cnt -abs(cnt)));
+      }
+    }
+
+    printf("line of cfg file: %d\n", (int) cnt);
+    fseek(f, 0, SEEK_CUR);
+  }
+
   if (!f) {
     fileName = appendToPath(getHomeDir(), xpdfUserConfigFile);
     if (!(f = fopen(fileName->getCString(), "r"))) {
